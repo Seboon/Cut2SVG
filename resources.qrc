@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/plugins/Cut2SVG" >
+        <file>icon.png</file>
+        <file>help.png</file>
+    </qresource>
+</RCC>

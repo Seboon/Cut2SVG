@@ -1,0 +1,104 @@
+.. Cut2SVG documentation master file, created by
+   sphinx-quickstart on Fri May 11 13:26:25 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+***********************************
+Cut2SVG plugin documentation
+***********************************
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+.. index:: Presentation
+
+
+Presentation
+*****************
+It happens quite often to encounter a bug in the SVG export of a print composer, causing the creation of a map with vectors overflowing their frame.
+
+This occurs when in the composer, the user-defined frame or scale of the map does not cover the entire footprint of the selected vector layers.
+
+*Example of a bug when exporting Qgis SVG :*
+
+.. image:: _images/BadExport.png
+   :width: 298 px
+   :align: center
+   :height: 421 px
+
+This plugin has been designed to overcome this problem and avoid a post-processing in a vector graphics editor.
+
+*SVG export with Cut2SVG :*
+
+.. image:: _images/CleanExport.png
+   :width: 298 px
+   :align: center
+   :height: 421 px
+
+.. index:: Pré-requis
+
+
+Prerequisites
+================= 
+
+| The CRS of the layers to be cut must be identical to the CRS of the project. 
+| If this is not the case, the plugin will display an alert message.
+
+| Also check the validity of the geometries of the vector layers.
+| In case of invalidity, the plugin will display the name of the layers concerned and their number of errors.
+
+
+.. index:: Fonctionnement
+
+
+Operation
+================= 
+
+* Check that all layers (vector as raster) in the composer are enabled in the main Qgis interface.
+
+
+* Select the print composer and map you want to work on.
+  The plugin displays the coordinates of the footprint of the selected map and opens the composer concerned.
+  A zoom is made in the canvas on the corresponding right-of-way, delimited by a blue rectangle, making it easier to find your way in the choice of the map.
+
+
+.. image:: _images/Interface.png
+   :width: 480 px
+   :align: center
+   :height: 262 px
+
+
+* Specify an export folder, then start the process.
+
+| The relevant vector layers will then be duplicated and cut by a temporary polygon corresponding to the footprint of the selected map in the print composer.
+| In the interface, these new layers will be found in a new group called "Cut2SVG".
+| Finally, the original vector layers will be disabled while their cut clones will resume their symbology.
+| The composer will be updated for direct viewing of the result.
+
+
+.. image:: _images/Result.png
+   :width: 480 px
+   :align: center
+   :height: 262 px
+
+
+It will only remain to export the composer in SVG.
+
+.. index:: Source code
+
+
+Source code
+=================
+
+The source code is available at the following address :
+
+https://github.com/Seboon/Cut2SVg.git
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cut2SVG plugin documentation &#8212; Cut2SVG 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cut2svg-plugin-documentation">
+<h1>Cut2SVG plugin documentation<a class="headerlink" href="#cut2svg-plugin-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="presentation">
+<span id="index-0"></span><h2>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h2>
+<p>It happens quite often to encounter a bug in the SVG export of a print composer, causing the creation of a map with vectors overflowing their frame.</p>
+<p>This occurs when in the composer, the user-defined frame or scale of the map does not cover the entire footprint of the selected vector layers.</p>
+<p><em>Example of a bug when exporting Qgis SVG :</em></p>
+<a class="reference internal image-reference" href="_images/BadExport.png"><img alt="_images/BadExport.png" class="align-center" src="_images/BadExport.png" style="width: 298px; height: 421px;" /></a>
+<p>This plugin has been designed to overcome this problem and avoid a post-processing in a vector graphics editor.</p>
+<p><em>SVG export with Cut2SVG :</em></p>
+<a class="reference internal image-reference" href="_images/CleanExport.png"><img alt="_images/CleanExport.png" class="align-center" src="_images/CleanExport.png" style="width: 298px; height: 421px;" /></a>
+<div class="section" id="prerequisites">
+<span id="index-1"></span><h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">The CRS of the layers to be cut must be identical to the CRS of the project.</div>
+<div class="line">If this is not the case, the plugin will display an alert message.</div>
+</div>
+<div class="line-block">
+<div class="line">Also check the validity of the geometries of the vector layers.</div>
+<div class="line">In case of invalidity, the plugin will display the name of the layers concerned and their number of errors.</div>
+</div>
+</div>
+<div class="section" id="operation">
+<span id="index-2"></span><h3>Operation<a class="headerlink" href="#operation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Check that all layers (vector as raster) in the composer are enabled in the main Qgis interface.</li>
+<li>Select the print composer and map you want to work on.
+The plugin displays the coordinates of the footprint of the selected map and opens the composer concerned.
+A zoom is made in the canvas on the corresponding right-of-way, delimited by a blue rectangle, making it easier to find your way in the choice of the map.</li>
+</ul>
+<a class="reference internal image-reference" href="_images/Interface.png"><img alt="_images/Interface.png" class="align-center" src="_images/Interface.png" style="width: 480px; height: 262px;" /></a>
+<ul class="simple">
+<li>Specify an export folder, then start the process.</li>
+</ul>
+<div class="line-block">
+<div class="line">The relevant vector layers will then be duplicated and cut by a temporary polygon corresponding to the footprint of the selected map in the print composer.</div>
+<div class="line">In the interface, these new layers will be found in a new group called “Cut2SVG”.</div>
+<div class="line">Finally, the original vector layers will be disabled while their cut clones will resume their symbology.</div>
+<div class="line">The composer will be updated for direct viewing of the result.</div>
+</div>
+<a class="reference internal image-reference" href="_images/Result.png"><img alt="_images/Result.png" class="align-center" src="_images/Result.png" style="width: 480px; height: 262px;" /></a>
+<p>It will only remain to export the composer in SVG.</p>
+</div>
+<div class="section" id="source-code">
+<span id="index-3"></span><h3>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h3>
+<p>The source code is available at the following address :</p>
+<p><a class="reference external" href="https://github.com/Seboon/Cut2SVg.git">https://github.com/Seboon/Cut2SVg.git</a></p>
+</div>
+<div class="section" id="indices-and-tables">
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Cut2SVG plugin documentation</a><ul>
+<li><a class="reference internal" href="#presentation">Presentation</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#operation">Operation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, S.Poudroux Éveha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

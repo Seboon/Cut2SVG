@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Cut 2 SVG
+qgisMinimumVersion=2.0
+description=Cut layers' vectors according to the map extent of the print composer for a clean svg export.
+version=0.1
+author=S.Poudroux / Éveha
+email=sebastien.poudroux@eveha.fr
+
+about=This plugin tries to be a workaround to the issue encountered for svg export from the print composer. It creates a temporary group of layer(s) with an outer boundary from which all the vectors of the activated layers in the canvas map are cut, according to the exent of the selectioned map of the print composer.
+
+tracker=https://github.com/Seboon/Cut2SVG/issuess
+repository=https://github.com/Seboon/Cut2SVG
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=composer, export, vector
+
+homepage=https://github.com/Seboon/Cut2SVG
+category=Vector
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
