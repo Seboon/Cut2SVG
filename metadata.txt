@@ -16,7 +16,7 @@ email=sebastien.poudroux@eveha.fr
 
 about=This plugin tries to be a workaround to the issue encountered for svg export from the print composer. It creates a temporary group of layer(s) with an outer boundary from which all the vectors of the activated layers in the canvas map are cut, according to the exent of the selectioned map of the print composer.
 
-tracker=https://github.com/Seboon/Cut2SVG/issuess
+tracker=https://github.com/Seboon/Cut2SVG/issues
 repository=https://github.com/Seboon/Cut2SVG
 # End of mandatory metadata
 
